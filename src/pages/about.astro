@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import githubMark from './assets/github-mark.svg';
+import running from './assets/running.jpg';
+import colorado from './assets/colorado.jpg';
+---
+
+<Layout>
+  <div id="main2" class="min-h-screen py-10 px-6">
+    <!-- Coding Section -->
+    <div class="section mb-12">
+      <h1 class="text-3xl font-bold text-gray-800 mb-6">Coding</h1>
+      <div class="hobbySubSec flex flex-row items-center gap-12">
+        <a href="https://github.com/tony2-5">
+          <Image id="gitHubLink" src={githubMark} alt="github logo" class="w-48 hover:scale-110 duration-300" />
+        </a>
+        <ul class="space-y-3 text-gray-700 list-disc">
+          <li>Love for web development and have many personal projects built on my GitHub.</li>
+          <li>Recently built a training log app that tracks running data and visualizes it with Recharts.</li>
+          <li>Frontend: React, NextUI, Tailwind | Backend: Next.js, GraphQL, Prisma, PostgreSQL.</li>
+          <li>Auth with NextAuth.js, hosted on Vercel.
+        </ul>
+      </div>
+    </div>
+
+    <!-- Running Section -->
+    <div class="section mb-12">
+      <h1 class="text-3xl font-bold text-gray-800 mb-6">Running</h1>
+      <div class="hobbySubSec flex flex-row items-center gap-12">
+        <Image src={running} alt="Me running" class="w-96 rounded-lg shadow-md" />
+        <ul class="space-y-3 text-gray-700 list-disc">
+          <li>Division 1 Cross Country/Track and Field athlete.</li>
+          <li>Been in the sport 6 years with a passion for distance running.</li>
+          <li>Main events: mile, 5k, and 10k.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Traveling Section -->
+    <div class="section mb-12">
+      <h1 class="text-3xl font-bold text-gray-800 mb-6">Traveling</h1>
+      <div class="hobbySubSec flex flex-row items-center gap-12">
+        <Image src={colorado} alt="Me in colorado" class="w-96 rounded-lg shadow-md" />
+        <ul class="space-y-3 text-gray-700 list-disc">
+          <li>Enjoy exploring new places and experiencing cultures through views and cuisine.</li>
+          <li>Most recently did a summer road trip across New Mexico, Arizona, and Colorado.</li>
+          <li>Visit Slovakia frequently to see family.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

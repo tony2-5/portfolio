@@ -1,3 +1,6 @@
+---
+import Navigation from '../components/Navigation.astro';
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,6 +11,10 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Navigation></Navigation>
 		<slot></slot>
 	</body>
+	<footer class="mb-8 text-center text-gray-600">
+		<p>© 2025 Anthony Dvorsky. All Rights Reserved.</p>
+	</footer>
 </html>
