@@ -1,7 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import githubMark from './assets/github-mark.svg';
+import email from './assets/email.svg';
+import linkedin from './assets/linkedin.png';
 ---
 
 <Layout>
-	<h1>contact</h1>
+	<div class="p-4 mx-auto max-w-xl bg-white">
+		<h1 class="text-2xl text-gray-800 font-bold text-center">Contact Me</h1>
+		<form class="mt-8 mb-12 space-y-4" method="POST" data-netlify="true">
+			<input type='text' placeholder='Name'
+				class="w-full py-2.5 px-4 text-gray-800 bg-gray-100 border focus:border-black focus:bg-transparent text-sm outline-none transition-all" />
+			<input type='email' placeholder='Email'
+				class="w-full py-2.5 px-4 text-gray-800 bg-gray-100 border focus:border-black focus:bg-transparent text-sm outline-none transition-all" />
+			<input type='text' placeholder='Subject'
+				class="w-full py-2.5 px-4 text-gray-800 bg-gray-100 border focus:border-black focus:bg-transparent text-sm outline-none transition-all" />
+			<textarea placeholder='Message' rows="4"
+				class="w-full px-4 text-gray-800 bg-gray-100 border focus:border-black focus:bg-transparent text-sm pt-3 outline-none transition-all"></textarea>
+			<button type='button'
+				class="text-white bg-gray-800 px-4 py-2.5 w-full rounded-md px-3 py-2 text-lg font-large text-gray-300 hover:bg-gray-700 hover:text-white">Send</button>
+		</form>
+		<div class="flex justify-between	">
+		<a href="https://github.com/tony2-5">
+			<Image id="gitHubLink" src={githubMark} alt="github logo" class="w-24 hover:scale-110 duration-300" />
+		</a>
+		<div class="flex items-center">
+			<a href="https://www.linkedin.com/in/anthony-dvorsky-6190981aa/">
+					<Image src={linkedin} alt="linkedin logo" class="w-24 hover:scale-110 duration-300" />
+			</a>
+		</div>
+		<a href="mailto:ajd99@njit.edu">
+			<Image src={email} alt="email symbol" class="w-24 hover:scale-110 duration-300" />
+		</a>
+		</div>
+	</div>
 </Layout>

@@ -1,6 +1,6 @@
 ---
 ---
-<nav class="bg-gray-800">
+<nav class="sticky top-0 bg-gray-800">
   <div class="flex h-16 items-center justify-between">
     <div class="flex flex-1 items-center justify-center">
       <a href="/" class="rounded-md px-3 py-2 text-lg font-large text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
@@ -14,3 +14,19 @@
     </div>
   </div>
 </nav>
+
+<style>
+  .active {
+    color:white;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));;
+  }
+</style>
+<script>
+  const currentLink = window.location.href
+  const links = document.querySelectorAll('a')
+  links.forEach((link)=> {
+    if(link.href === currentLink) {
+      link.classList.add('active')
+    }
+  })
+</script>
