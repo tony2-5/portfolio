@@ -1,7 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import headshot from './assets/headshot.png'
+import resume from './assets/ResumeAnthonyDvorsky1_2025.pdf'
+import { Image } from "astro:assets";
 ---
 
 <Layout>
-	<h1>Index</h1>
+
+	<div class="flex items-center h-[85vh]">
+		<div class="flex flex-1 items-center justify-center">
+			<Image src={headshot} alt="headshot" class="w-96 drop-shadow-lg" />
+		</div>
+		<div class="flex w-[60vw] flex-col">
+			<p class="font-mono text-lg font-medium p-4 mr-12">Hello! My name is Anthony Dvorsky, I am a 21-year-old student and software developer from New Jersey.</p>
+			<p class="font-mono text-lg font-medium p-4 mr-12">Currently, I am pursuing my Master's Degree in Computer Science at the New Jersey Institute of Technology, graduating in May 2026. Most recently I worked as a full-stack Software Engineer Intern at Redhawk Research LLC, where I gained hands-on experience contributing to their flagship product, Jonah Direct.</p>
+			<p class="font-mono text-lg font-medium p-4 mr-12"><a href={resume} class="flex items-center font-mono text-blue-600 dark:text-blue-500 hover:underline">
+				Resume
+				<svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+				</svg>
+			</a>
+			</p>
+		</div>
+	</div>
 </Layout>
