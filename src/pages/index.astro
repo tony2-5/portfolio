@@ -6,15 +6,14 @@ import { Image } from "astro:assets";
 ---
 
 <Layout>
-
-	<div class="flex items-center h-[85vh]">
-		<div class="flex flex-1 items-center justify-center">
-			<Image src={headshot} alt="headshot" class="w-96 drop-shadow-lg" />
+	<div class="flex flex-col md:flex-row items-center min-h-[85vh] py-10 px-8 gap-8">
+		<div class="flex items-center justify-center shrink-0">
+			<Image src={headshot} alt="headshot" class="w-56 md:w-96 drop-shadow-lg" />
 		</div>
-		<div class="flex w-[60vw] flex-col">
-			<p class="font-mono text-lg font-medium p-4 mr-12">Hello! My name is Anthony Dvorsky, I am a 22-year-old student and software developer from New Jersey.</p>
-			<p class="font-mono text-lg font-medium p-4 mr-12">I am currently pursuing a Master's Degree in Computer Science at the New Jersey Institute of Technology, with an expected graduation date of May 2026. Most recently, I worked as a Tech Intern at Wakefern Food Corporation on the Point of Sale team, where I contributed to the development of product management software for self-checkouts and registers used by partner stores.</p>
-			<p class="font-mono text-lg font-medium p-4 mr-12"><a href={resume} class="flex items-center font-mono text-blue-600 dark:text-blue-500 hover:underline">
+		<div class="flex flex-col">
+			<p class="font-mono text-lg font-medium p-4 md:mr-12">Hello! My name is Anthony Dvorsky, I am a 22-year-old student and software developer from New Jersey.</p>
+			<p class="font-mono text-lg font-medium p-4 md:mr-12">I am currently pursuing a Master's Degree in Computer Science at the New Jersey Institute of Technology, with an expected graduation date of May 2026. Most recently, I worked as a Tech Intern at Wakefern Food Corporation on the Point of Sale team, where I contributed to the development of product management software for self-checkouts and registers used by partner stores.</p>
+			<p class="font-mono text-lg font-medium p-4 md:mr-12"><a href={resume} class="flex items-center font-mono text-blue-600 dark:text-blue-500 hover:underline">
 				Resume
 				<svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
 						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>

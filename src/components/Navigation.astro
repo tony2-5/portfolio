@@ -1,32 +1,62 @@
 ---
 ---
-<nav class="sticky top-0 bg-gray-800">
-  <div class="flex h-16 items-center justify-between">
-    <div class="flex flex-1 items-center justify-center">
-      <a href="/" class="rounded-md px-3 py-2 text-lg font-large text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+<nav class="sticky top-0 bg-gray-800 z-50">
+  <div class="flex h-16 items-center justify-between px-4">
+    <a href="/" class="rounded-md px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+
+    <!-- Mobile -->
+    <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Desktop -->
+    <div class="hidden md:flex space-x-8">
+      <a href="/projects/" class="rounded-md px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+      <a href="/about/" class="rounded-md px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 hover:text-white">About Me</a>
+      <a href="/contact/" class="rounded-md px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
     </div>
-    <div class="flex flex-1 items-center justify-center">
-      <div class="flex space-x-16">
-        <a href="/projects/" class="rounded-md px-3 py-2 text-lg font-large text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-        <a href="/about/" class="rounded-md px-3 py-2 text-lg font-large text-gray-300 hover:bg-gray-700 hover:text-white">About Me</a>
-        <a href="/contact/" class="rounded-md px-3 py-2 text-lg font-large text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
-      </div>
-    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pb-4 space-y-1">
+    <a href="/projects/" class="block rounded-md px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+    <a href="/about/" class="block rounded-md px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 hover:text-white">About Me</a>
+    <a href="/contact/" class="block rounded-md px-3 py-2 text-lg text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
   </div>
 </nav>
 
 <style>
   .active {
-    color:white;
-    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));;
+    color: white;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
   }
 </style>
+
 <script>
-  const currentLink = window.location.href
-  const links = document.querySelectorAll('a')
-  links.forEach((link)=> {
-    if(link.href === currentLink) {
-      link.classList.add('active')
+  // Active link highlighting
+  const currentLink = window.location.href;
+  const links = document.querySelectorAll('a');
+  links.forEach((link) => {
+    if (link.href === currentLink) {
+      link.classList.add('active');
     }
-  })
+  });
+
+  // Hamburger toggle
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden', isOpen);
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+  });
 </script>
