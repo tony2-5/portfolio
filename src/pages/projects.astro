@@ -4,20 +4,43 @@ import Image from 'astro/components/Image.astro';
 import tonyTraining from './assets/tonyTraining.png'
 import djangoShop from './assets/djangoShop.png'
 import resumeAnalyzer from './assets/resumeAnalyzer.png'
-import predictingTaxiTips from './assets/predictingTaxiTips.png'
 import todoApp from './assets/todoApp.png'
 import etchasketch from './assets/etchasketch.png'
+import cluedoImage from './assets/cluedoImage.png'
 ---
 
 <Layout>
 	<h1 class="text-3xl font-bold text-gray-800 px-6 pt-6">Projects</h1>
 	<div class="min-h-screen py-10 px-6">
+		<!-- Predicting Taxi Tips Section -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Prolog Cluedo</h2>
+      <div class="flex flex-row items-center gap-12">
+        <Image src={cluedoImage} alt="predicting taxi tip project" class="w-[40vw] shrink-0 rounded-lg shadow-md" />
+        <div class="flex flex-col min-w-0">
+					<ul class="space-y-3 text-gray-700 list-disc text-lg">
+						<li>A fully functional Command Line Interface (CLI) implementation of the board game Cluedo for 1-6 players, featuring knowledge-based intelligent AI opponents capable of making strategic gameplay deductions.</li>
+						<li>Developed the game state loop and knowledge base using Prolog's dynamic facts, and implemented an A* search algorithm utilizing
+Manhattan Distance heuristics for optimal AI pathfinding.</li>
+						<li>Developed to gain a better understanding of knowledge-based agents and declaritive programming languages.</li>
+					</ul>
+					<p class="font-mono text-lg font-medium mt-4"><a href="https://github.com/tony2-5/clue" class="flex items-center font-mono text-blue-600 dark:text-blue-500 hover:underline">
+						Github Repo
+						<svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+						</svg>
+					</a>
+					</p>
+				</div>
+      </div>
+    </div>
+
     <!--  Training Log Section -->
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Training Log App</h2>
       <div class="flex flex-row items-center gap-12">
-        <Image src={tonyTraining} alt="training log app" class="w-[50vw] rounded-lg shadow-md" />
-				<div class="flex flex-col">
+        <Image src={tonyTraining} alt="training log app" class="w-[40vw] shrink-0 rounded-lg shadow-md" />
+				<div class="flex flex-col min-w-0">
 					<ul class="space-y-3 text-gray-700 list-disc text-lg">
 						<li>Full-stack training app that tracks users running data and visualizes it with Recharts, a React chart library.</li>
 						<li>I used React, NextUI, and Tailwind to build the frontend, and Next.js, GraphQL, and Prisma with PostgreSQL for the backend.</li>
@@ -45,12 +68,12 @@ import etchasketch from './assets/etchasketch.png'
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Django Shop Project</h2>
       <div class="flex flex-row items-center gap-12">
-        <Image src={djangoShop} alt="shop app" class="w-[50vw] rounded-lg shadow-md" />
-        <div class="flex flex-col">
+        <Image src={djangoShop} alt="shop app" class="w-[40vw] shrink-0 rounded-lg shadow-md" />
+        <div class="flex flex-col min-w-0">
 					<ul class="space-y-3 text-gray-700 list-disc text-lg">
 						<li>Shop project using Django for backend and React for frontend.</li>
 						<li>Used Django Rest Framework to build a REST API for performing CRUD operations on shop and cart products.</li>
-						<li>Implemented user authentication using JWT with Django Rest Framework’s JWT extension and Axios middleware on the frontend.</li>
+						<li>Implemented user authentication using JWT with Django Rest Framework's JWT extension and Axios middleware on the frontend.</li>
 					</ul>
 					<p class="font-mono text-lg font-medium mt-4"><a href="https://github.com/tony2-5/shopProjectDjango" class="flex items-center font-mono text-blue-600 dark:text-blue-500 hover:underline">
 						Github Repo
@@ -67,8 +90,8 @@ import etchasketch from './assets/etchasketch.png'
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Resume Analyzer Group Project</h2>
       <div class="flex flex-row items-center gap-12">
-        <Image src={resumeAnalyzer} alt="resume analyzer app" class="w-[50vw] rounded-lg shadow-md" />
-        <div class="flex flex-col">
+        <Image src={resumeAnalyzer} alt="resume analyzer app" class="w-[40vw] shrink-0 rounded-lg shadow-md" />
+        <div class="flex flex-col min-w-0">
 					<ul class="space-y-3 text-gray-700 list-disc text-lg">
 						<li>This project allows users to upload their resume and receive feedback and job recommendations based on the resume's content.</li>
 						<li>Using natural language processing, our application is able to suggest content changes to resumes, such as wording, structure, and missing skills.</li>
@@ -86,34 +109,12 @@ import etchasketch from './assets/etchasketch.png'
       </div>
     </div>
 
-		<!-- Predicting Taxi Tips Section -->
-    <div class="mb-12">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Predicting Taxi Tips</h2>
-      <div class="flex flex-row items-center gap-12">
-        <Image src={predictingTaxiTips} alt="predicting taxi tip project" class="w-[50vw] rounded-lg shadow-md" />
-        <div class="flex flex-col">
-					<ul class="space-y-3 text-gray-700 list-disc text-lg">
-						<li>Machine Learning project predicting tips for taxi rides using a data set from NYC Open Data Portal and a Linear Regression Model.</li>
-						<li>Cleaned and visualized data set using Pandas, NumPy, Seaborn, and Matplotlib.</li>
-						<li>Used Scikit-learn to split and encode the data and to train and evaluate the model.</li>
-					</ul>
-					<p class="font-mono text-lg font-medium mt-4"><a href="https://github.com/tony2-5/PredictingTaxiTips" class="flex items-center font-mono text-blue-600 dark:text-blue-500 hover:underline">
-						Github Repo
-						<svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-						</svg>
-					</a>
-					</p>
-				</div>
-      </div>
-    </div>
-
 		<!-- Todo App Section -->
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Todo List App</h2>
       <div class="flex flex-row items-center gap-12">
-        <Image src={todoApp} alt="todo list app" class="w-[50vw] rounded-lg shadow-md" />
-        <div class="flex flex-col">
+        <Image src={todoApp} alt="todo list app" class="w-[40vw] shrink-0 rounded-lg shadow-md" />
+        <div class="flex flex-col min-w-0">
 					<ul class="space-y-3 text-gray-700 list-disc text-lg">
 						<li>Basic Todo App built using HTML, CSS, Javascript, and Webpack.</li>
 						<li>I built this project with the goal of gaining a better understanding of fundamental web development concepts, such as JavaScript, Node Package Manager (NPM), and Webpack.</li>
@@ -140,8 +141,8 @@ import etchasketch from './assets/etchasketch.png'
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Etch-A-Sketch App</h2>
       <div class="flex flex-row items-center gap-12">
-        <Image src={etchasketch} alt="etch-a-sketch app" class="w-[50vw] rounded-lg shadow-md" />
-        <div class="flex flex-col">
+        <Image src={etchasketch} alt="etch-a-sketch app" class="w-[40vw] shrink-0 rounded-lg shadow-md" />
+        <div class="flex flex-col min-w-0">
 					<ul class="space-y-3 text-gray-700 list-disc text-lg">
 						<li>A small, fun project creating an interactive Etch A Sketch for users.</li>
 						<li>This project helped me master Javascript DOM manipulation fundamentals.</li>
